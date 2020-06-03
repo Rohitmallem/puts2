@@ -7,8 +7,8 @@ app = Flask(__name__)
 def index():
     return 'Usage;\nOperation?A=<input1>&B=<input2>\n'
 
-@app.route('/add')
-def addition():
+@app.route('/sub')
+def subtraction():
     try:
         input1=request.args.get('A',default = 0, type = Fraction)
     except ZeroDivisionError as error:
@@ -22,8 +22,7 @@ def addition():
     else:
         C = Fraction(input1)
         D = Fraction(input2)
-        return str(float(C+D))#removed round function and results in float
-
+        return str(float(C-D))
 
 
 if __name__ == "__main__":
