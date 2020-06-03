@@ -41,6 +41,23 @@ def subtraction():
         D = Fraction(input2)
         return str(float(C-D))
 
+@app.route('/mul')
+def multiplication():
+    try:
+        input1=request.args.get('A',default = 0, type = Fraction)
+    except ZeroDivisionError as error:
+        input1='None'
+    try:
+        input2=request.args.get('B',default = 0, type = Fraction)
+    except ZeroDivisionError as error:
+        input2='None'
+    if input1 == 'None' or input2 == 'None' :
+        return 'None'
+    else:
+        C = Fraction(input1)
+        D = Fraction(input2)
+        return str(float(C*D))
+
 
 if __name__ == "__main__":
     app.run()
