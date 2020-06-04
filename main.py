@@ -6,8 +6,8 @@ app = Flask(__name__)
 def index():
     return 'Usage;\nOperation?A=<value1>&B=<value2>\n'
 
-@app.route('/mul')
-def multiplication():
+@app.route('/div')
+def division():
     try:
         value1=request.args.get('B',default = 0, type = Fraction)
     except ZeroDivisionError as error:
@@ -21,7 +21,10 @@ def multiplication():
     else:
         A = Fraction(value1)
         B = Fraction(value2)
-        return str(float(A*B))
+        try:
+            return str(float(A/B))
+        except ZeroDivisionError as error:
+            return 'Nothing'
 
 if __name__ == "__main__":
     app.run()
