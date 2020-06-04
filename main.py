@@ -6,14 +6,14 @@ app = Flask(__name__)
 def index():
     return 'Usage;\nOperation?A=<value1>&B=<value2>\n'
 
-@app.route('/add')
-def addition():
+@app.route('/mul')
+def multiplication():
     try:
-        value1=request.args.get('A',default = 0, type = Fraction)
+        value1=request.args.get('B',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value1='Nothing'
     try:
-        value2=request.args.get('B',default = 0, type = Fraction)
+        value2=request.args.get('F',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value2='Nothing'
     if value1 == 'Nothing' or value2 == 'Nothing' :
@@ -21,7 +21,7 @@ def addition():
     else:
         A = Fraction(value1)
         B = Fraction(value2)
-        return str(float(A-B))#removed round function and results in float
+        return str(float(A*B))
 
 if __name__ == "__main__":
     app.run()
