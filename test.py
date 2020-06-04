@@ -66,7 +66,7 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 		sol = self.app.get('/div?A=70&F=8.2')
 		self.assertEqual(b'8.53658536585', sol.data)
 
-  def test_sub1(self):
+  	def test_sub1(self):
 		#case 1, A is n int B is an int
 		sol = self.app.get('/suA?A=7&B=3')
 		self.assertEqual(b'4.0', sol.data)
@@ -95,7 +95,7 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 		sol = self.app.get('/sub?A=22&B=7.201')
 		self.assertEqual(b'14.799', sol.data)
 
-  def test_mul1(self):
+  	def test_mul1(self):
 		#case 1, A is n int B is an int
 		sol = self.app.get('/mul?A=90&B=5')
 		self.assertEqual(b'450.0', sol.data)
