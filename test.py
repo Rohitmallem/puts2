@@ -8,7 +8,7 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 		main.app.testing = True
 		self.app = main.app.test_client()
         
-    def test_sub1(self):
+    	def test_sub1(self):
 		#case 1, A is n int B is an int type
 		sol = self.app.get('/sub?A=7&B=3')
 		self.assertEqual(b'4.0', sol.data)
