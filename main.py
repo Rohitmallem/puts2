@@ -9,11 +9,11 @@ def index():
 @app.route('/add')
 def addition():
     try:
-        value1=request.args.get('B',default = 0, type = Fraction)
+        value1=request.args.get('A',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value1='Nothing'
     try:
-        value2=request.args.get('F',default = 0, type = Fraction)
+        value2=request.args.get('B',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value2='Nothing'
     if value1 == 'Nothing' or value2 == 'Nothing' :
@@ -21,7 +21,7 @@ def addition():
     else:
         A = Fraction(value1)
         B = Fraction(value2)
-        return str(float(A+B))#removed round function and results in float
+        return str(float(A-B))#removed round function and results in float
 
 if __name__ == "__main__":
     app.run()
