@@ -10,18 +10,17 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 
 	def test_add1(self):
 		#case 1, A is n int B is an int type
-		sol = self.app.get('/add?=20&B=2')
+		sol = self.app.get('/add?A=20&B=2')
 		self.assertEqual(b'22.0', sol.data)
 
 	def test_add2(self):
 
-		#case 2, A is rational no. and F is rational no. p/q form
+		#case 2, A is rational no. and B is rational no. p/q form
 		sol = self.app.get('/add?A=5/3&B=7/2')
 		self.assertEqual(b'5.16666666667', sol.data)
 
 	def test_add3(self):
 
-		#case 3, A is a float and F is F float
 		sol = self.app.get('/add?A=12.3&B=1.102')
 		self.assertEqual(b'13.402', sol.data)
 
@@ -45,25 +44,25 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 	def test_div2(self):
 
 		#case 2, A is rational no. and B is rational no. p/q form
-		sol = self.app.get('/div?A=7/2&F=27/4')
+		sol = self.app.get('/div?A=7/2&B=27/4')
 		self.assertEqual(b'0.518518518519', sol.data)
 
 	def test_div3(self):
 
 		#case 3, A is a float and B is a float
-		sol = self.app.get('/div?A=0.0789&F=9102.232')
+		sol = self.app.get('/div?A=0.0789&B=9102.232')
 		self.assertEqual(b'8.66820357908e-06', sol.data)
 
 	def test_div4(self):
 
 		#case 4, when A is float and B is int
-		sol = self.app.get('/div?A=32.32&F=67')
+		sol = self.app.get('/div?A=32.32&B=67')
 		self.assertEqual(b'0.482388059701', sol.data)
 
 	def test_div5(self):
 
 		#case 5, when A is int and B is float
-		sol = self.app.get('/div?A=70&F=8.2')
+		sol = self.app.get('/div?A=70&B=8.2')
 		self.assertEqual(b'8.53658536585', sol.data)
 
   	def test_sub1(self):
@@ -120,7 +119,7 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 
 	def test_mul5(self):
 
-		#case 5, when A is int and F is float
+		#case 5, when A is int and B is float
 		sol = self.app.get('/mul?A=1500&B=8.89')
 		self.assertEqual(b'13335.0', sol.data)
 
