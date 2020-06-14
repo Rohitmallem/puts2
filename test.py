@@ -10,7 +10,7 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 
 	def test_add1(self):
 		#case 1, A is n int B is an int type
-		sol = self.app.get('/add?=20&B=2')
+		sol = self.app.get('/add?A=20&B=2')
 		self.assertEqual(b'22.0', sol.data)
 
 	def test_add2(self):
