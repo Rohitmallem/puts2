@@ -21,7 +21,7 @@ def multiplication():
     else:
         E = Fraction(value1)
         F = Fraction(value2)
-        return str(float(A*B))
+        return str(float(E*F))
 
 if __name__ == "__main__":
     app.run()
