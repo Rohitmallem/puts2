@@ -9,72 +9,72 @@ def index():
 @app.route('/add')
 def addition():
     try:
-        value1=request.args.get('B',default = 0, type = Fraction)
+        value1=request.args.get('A',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value1='Nothing'
     try:
-        value2=request.args.get('F',default = 0, type = Fraction)
+        value2=request.args.get('B',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value2='Nothing'
     if value1 == 'Nothing' or value2 == 'Nothing' :
         return 'Nothing'
     else:
-        A = Fraction(value1)
-        B = Fraction(value2)
-        return str(float(A+B))#removed round function and results in float
+        E = Fraction(value1)
+        F = Fraction(value2)
+        return str(float(E+F))#removed round function and results in float
 
 @app.route('/sub')
 def subtraction():
     try:
-        value1=request.args.get('B',default = 0, type = Fraction)
+        value1=request.args.get('A',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value1='Nothing'
     try:
-        value2=request.args.get('F',default = 0, type = Fraction)
+        value2=request.args.get('B',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value2='Nothing'
     if value1 == 'Nothing' or value2 == 'Nothing' :
         return 'Nothing'
     else:
-        A = Fraction(value1)
-        B = Fraction(value2)
-        return str(float(A-B))
+        E = Fraction(value1)
+        F = Fraction(value2)
+        return str(float(E-F))
 
 
 @app.route('/mul')
 def multiplication():
     try:
-        value1=request.args.get('B',default = 0, type = Fraction)
+        value1=request.args.get('A',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value1='Nothing'
     try:
-        value2=request.args.get('F',default = 0, type = Fraction)
+        value2=request.args.get('B',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value2='Nothing'
     if value1 == 'Nothing' or value2 == 'Nothing' :
         return 'Nothing'
     else:
-        A = Fraction(value1)
-        B = Fraction(value2)
-        return str(float(A*B))
+        E = Fraction(value1)
+        F = Fraction(value2)
+        return str(float(E*F))
 
 @app.route('/div')
 def division():
     try:
-        value1=request.args.get('B',default = 0, type = Fraction)
+        value1=request.args.get('A',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value1='Nothing'
     try:
-        value2=request.args.get('F',default = 0, type = Fraction)
+        value2=request.args.get('B',default = 0, type = Fraction)
     except ZeroDivisionError as error:
         value2='Nothing'
     if value1 == 'Nothing' or value2 == 'Nothing' :
         return 'Nothing'
     else:
-        A = Fraction(value1)
-        B = Fraction(value2)
+        E = Fraction(value1)
+        F = Fraction(value2)
         try:
-            return str(float(A/B))
+            return str(float(E/F))
         except ZeroDivisionError as error:
             return 'Nothing'
 
