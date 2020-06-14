@@ -19,9 +19,9 @@ def addition():
     if value1 == 'Nothing' or value2 == 'Nothing' :
         return 'Nothing'
     else:
-        A = Fraction(value1)
-        B = Fraction(value2)
-        return str(float(A-B))#removed round function and results in float
+        E = Fraction(value1)
+        F = Fraction(value2)
+        return str(float(E-F))#removed round function and results in float
 
 if __name__ == "__main__":
     app.run()
